@@ -25,16 +25,16 @@ class CashRegister
     @transaction_num += 1 
     if quantity > 1 
       quantity.times do 
-        @items << title 
+        items << title 
       end 
     else 
-      @items << title 
+      items << title 
     end 
-    @total
+    total
   end 
 
   def apply_discount
-    if @discount
+    if discount
       savings = @total.to_f * (@discount.to_f / 100)
       @total = (@total - savings).to_i
       "After the discount, the total comes to $#{@total}."
